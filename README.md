@@ -50,6 +50,22 @@ src/
   - Criação do componente `Footer.tsx` com ícones Phosphor
   - Atualização do `App.tsx` para incluir Navbar, Home e Footer
 
+## ✨ Extras Implementados
+
+Além dos requisitos básicos, foram implementadas melhorias de UX:
+
+- **Hover Effects com Transições Suaves**:
+
+  - Links da Navbar com `hover:underline` para feedback visual
+  - Botão "Nova Postagem" com efeito de inversão de cores (`hover:bg-white hover:text-indigo-900`)
+  - Ícones de redes sociais com efeito de scale (`hover:scale-110`)
+  - Todas as transições com `transition-*` e `duration-300` para animações suaves
+
+- **Links Funcionais nas Redes Sociais**:
+  - LinkedIn: https://www.linkedin.com/school/generaborasil
+  - Instagram: https://www.instagram.com/generationbrasil
+  - Facebook: https://www.facebook.com/generationbrasil
+
 ## 🏃 Como Executar
 
 ```bash

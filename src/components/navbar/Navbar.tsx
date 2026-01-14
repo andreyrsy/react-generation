@@ -8,11 +8,11 @@ function Navbar() {
                     Blog Pessoal
 
                     <div className='flex gap-4'>
-                        Postagens
-                        Temas
-                        Cadastrar tema
-                        Perfil
-                        Sair
+                        <span className='hover:underline cursor-pointer'>Postagens</span>
+                        <span className='hover:underline cursor-pointer'>Temas</span>
+                        <span className='hover:underline cursor-pointer'>Cadastrar tema</span>
+                        <span className='hover:underline cursor-pointer'>Perfil</span>
+                        <span className='hover:underline cursor-pointer'>Sair</span>
                     </div>
                 </div>
             </div>
