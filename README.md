@@ -9,6 +9,7 @@ Projeto do bootcamp Generation Brasil - Blog Pessoal desenvolvido em React com T
 - Vite
 - Tailwind CSS 4
 - Phosphor Icons
+- React Router DOM
 
 ## 📁 Estrutura do Projeto
 
@@ -50,6 +51,14 @@ src/
   - Criação do componente `Footer.tsx` com ícones Phosphor
   - Atualização do `App.tsx` para incluir Navbar, Home e Footer
 
+### Passos 9-10 (Rotas)
+
+- **Passo 9**: Introdução ao React Router DOM (teoria)
+- **Passo 10**: Configuração de Rotas
+  - Instalação do `react-router-dom`
+  - Configuração do `BrowserRouter`, `Routes` e `Route` no `App.tsx`
+  - Atualização do `Navbar` para usar `Link` para navegação interna
+
 ## ✨ Extras Implementados
 
 Além dos requisitos básicos, foram implementadas melhorias de UX:
@@ -62,7 +71,7 @@ Além dos requisitos básicos, foram implementadas melhorias de UX:
   - Todas as transições com `transition-*` e `duration-300` para animações suaves
 
 - **Links Funcionais nas Redes Sociais**:
-  - LinkedIn: https://www.linkedin.com/school/generaborasil
+  - LinkedIn: https://www.linkedin.com/school/generationbrasil
   - Instagram: https://www.instagram.com/generationbrasil
   - Facebook: https://www.facebook.com/generationbrasil
 
@@ -84,3 +93,4 @@ npm run build
 - [Cookbook Generation - React](https://github.com/conteudoGeneration/cookbook_java_fullstack/tree/main/05_react)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Phosphor Icons](https://phosphoricons.com/)
+- [React Router](https://reactrouter.com/)
