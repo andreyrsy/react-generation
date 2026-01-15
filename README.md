@@ -22,8 +22,12 @@ src/
 │   └── navbar/
 │       └── Navbar.tsx
 ├── pages/
-│   └── home/
-│       └── Home.tsx
+│   ├── cadastro/
+│   │   └── Cadastro.tsx
+│   ├── home/
+│   │   └── Home.tsx
+│   └── login/
+│       └── Login.tsx
 ├── App.tsx
 ├── index.css
 └── main.tsx
@@ -58,6 +62,22 @@ src/
   - Instalação do `react-router-dom`
   - Configuração do `BrowserRouter`, `Routes` e `Route` no `App.tsx`
   - Atualização do `Navbar` para usar `Link` para navegação interna
+
+### Passos 11-12 (Páginas de Cadastro e Login)
+
+- **Passo 11**: Página de Cadastro - Estilização
+  - Criação da pasta `cadastro` em `pages`
+  - Criação do componente `Cadastro.tsx` com formulário estilizado
+  - Layout responsivo com grid (2 colunas em telas grandes)
+  - Imagem de fundo na primeira coluna
+  - Atualização das rotas no `App.tsx`
+- **Passo 12**: Página de Login - Estilização
+  - Criação da pasta `login` em `pages`
+  - Criação do componente `Login.tsx` com formulário estilizado
+  - Link para página de cadastro
+  - Layout responsivo com grid (2 colunas em telas grandes)
+  - Imagem de fundo na segunda coluna
+  - Atualização das rotas no `App.tsx`
 
 ## ✨ Extras Implementados
 
