@@ -10,6 +10,7 @@ Projeto do bootcamp Generation Brasil - Blog Pessoal desenvolvido em React com T
 - Tailwind CSS 4
 - Phosphor Icons
 - React Router DOM
+- Axios
 
 ## 📁 Estrutura do Projeto
 
@@ -21,6 +22,11 @@ src/
 │   │   └── Footer.tsx
 │   └── navbar/
 │       └── Navbar.tsx
+├── models/
+│   ├── Postagem.ts
+│   ├── Tema.ts
+│   ├── Usuario.ts
+│   └── UsuarioLogin.ts
 ├── pages/
 │   ├── cadastro/
 │   │   └── Cadastro.tsx
@@ -28,6 +34,8 @@ src/
 │   │   └── Home.tsx
 │   └── login/
 │       └── Login.tsx
+├── services/
+│   └── Service.ts
 ├── App.tsx
 ├── index.css
 └── main.tsx
@@ -79,6 +87,26 @@ src/
   - Imagem de fundo na segunda coluna
   - Atualização das rotas no `App.tsx`
 
+### Passos 13-16 (Contexto, Models e Services)
+
+- **Passo 13**: Introdução ao Axios (teoria)
+- **Passo 14**: Criação das Models
+  - `Usuario.ts`
+  - `Tema.ts`
+  - `Postagem.ts`
+  - `UsuarioLogin.ts`
+- **Passo 15**: Criação do Service
+  - Instalação do `axios`
+  - Configuração da instância do Axios com `baseURL`
+  - Implementação dos métodos `cadastrarUsuario` e `login`
+- **Passo 16**: Página de Cadastro - Lógica
+  - Instalação do `react-spinners`
+  - Implementação de `useState` para gerenciar dados do formulário
+  - Integração com a API via Service para cadastro de usuários
+  - Validação de senha e confirmação de senha
+  - Feedback visual de carregamento (`ClipLoader`)
+  - Redirecionamento após cadastro com `useNavigate`
+
 ## ✨ Extras Implementados
 
 Além dos requisitos básicos, foram implementadas melhorias de UX:
@@ -114,3 +142,4 @@ npm run build
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Phosphor Icons](https://phosphoricons.com/)
 - [React Router](https://reactrouter.com/)
+- [Axios](https://axios-http.com/)
