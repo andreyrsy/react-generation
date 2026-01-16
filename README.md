@@ -11,6 +11,7 @@ Projeto do bootcamp Generation Brasil - Blog Pessoal desenvolvido em React com T
 - Phosphor Icons
 - React Router DOM
 - Axios
+- Context API
 
 ## 📁 Estrutura do Projeto
 
@@ -22,6 +23,8 @@ src/
 │   │   └── Footer.tsx
 │   └── navbar/
 │       └── Navbar.tsx
+├── contexts/
+│   └── AuthContext.tsx
 ├── models/
 │   ├── Postagem.ts
 │   ├── Tema.ts
@@ -107,6 +110,20 @@ src/
   - Feedback visual de carregamento (`ClipLoader`)
   - Redirecionamento após cadastro com `useNavigate`
 
+### Passos 17-19 (Autenticação)
+
+- **Passo 17**: Introdução a Context API (teoria)
+- **Passo 18**: Implementação do AuthContext
+  - Criação da pasta `contexts`
+  - Implementação do `AuthContext` com estados de `usuario` e `isLoading`
+  - Funções `handleLogin` e `handleLogout`
+  - Configuração do `AuthProvider` no `App.tsx`
+- **Passo 19**: Lógica de Login
+  - Integração do `AuthContext` no componente `Login`
+  - Implementação da função de login com chamada à API
+  - Redirecionamento para `/home` após login com sucesso
+  - Implementação do Logout no `Navbar`
+
 ## ✨ Extras Implementados
 
 Além dos requisitos básicos, foram implementadas melhorias de UX:
@@ -143,3 +160,4 @@ npm run build
 - [Phosphor Icons](https://phosphoricons.com/)
 - [React Router](https://reactrouter.com/)
 - [Axios](https://axios-http.com/)
+- [Context API](https://react.dev/reference/react/createContext)
