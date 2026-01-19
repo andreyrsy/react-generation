@@ -21,8 +21,17 @@ src/
 ├── components/
 │   ├── footer/
 │   │   └── Footer.tsx
-│   └── navbar/
-│       └── Navbar.tsx
+│   ├── navbar/
+│   │   └── Navbar.tsx
+│   └── tema/
+│       ├── cardtema/
+│       │   └── CardTema.tsx
+│       ├── deletartema/
+│       │   └── DeletarTema.tsx
+│       ├── formtema/
+│       │   └── FormTema.tsx
+│       └── listatemas/
+│           └── ListaTemas.tsx
 ├── contexts/
 │   └── AuthContext.tsx
 ├── models/
@@ -49,7 +58,6 @@ src/
 Além dos requisitos básicos, foram implementadas melhorias de UX:
 
 - **Hover Effects com Transições Suaves**:
-
   - Links da Navbar com `hover:underline` para feedback visual
   - Botão "Nova Postagem" com efeito de inversão de cores (`hover:bg-white hover:text-indigo-900`)
   - Ícones de redes sociais com efeito de scale (`hover:scale-110`)
