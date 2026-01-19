@@ -74,36 +74,64 @@ function DeletarTema() {
     }
     
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar tema</h1>
-            <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar o tema a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header 
-                    className='py-2 px-6 bg-amber-800 text-white font-bold text-2xl'>
-                    Tema
-                </header>
-                <p className='p-8 text-3xl bg-amber-100 h-full'>{tema.descricao}</p>
-                <div className="flex">
-                    <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
-                        onClick={retornar}>
-                        Não
-                    </button>
-                    <button 
-                        className='w-full text-slate-100 bg-amber-600 
-                                   hover:bg-amber-700 flex items-center justify-center'
-                                   onClick={deletarTema}>
+        <div className="min-h-[60vh] bg-gradient-to-br from-slate-50 to-red-50 py-12">
+            <div className='container max-w-lg mx-auto px-4'>
+                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8
+                                shadow-2xl border border-red-100 overflow-hidden">
+                    
+                    <div className="text-center mb-6">
+                        <span className="text-6xl">⚠️</span>
+                        <h1 className='text-3xl font-bold text-red-600 mt-4'>
+                            Deletar Tema
+                        </h1>
+                        <p className='text-gray-500 mt-2'>
+                            Esta ação não pode ser desfeita
+                        </p>
+                    </div>
 
-                        { isLoading ? 
-                            <ClipLoader 
-                                color="#ffffff" 
-                                size={24}
-                            /> : 
-                            <span>Sim</span>
-                        }
+                    <div className='rounded-2xl overflow-hidden shadow-lg border border-red-200'>
+                        <header 
+                            className='py-3 px-6 bg-gradient-to-r from-red-500 to-red-600 
+                                       text-white font-bold text-xl'>
+                            <span className="flex items-center gap-2">
+                                🏷️ Tema
+                            </span>
+                        </header>
+                        <div className='p-6 bg-gradient-to-br from-white to-red-50'>
+                            <p className='text-2xl text-gray-700 font-medium'>{tema.descricao}</p>
+                        </div>
+                    </div>
 
-                    </button>
+                    <p className='text-center text-gray-600 my-6 font-medium'>
+                        Você tem certeza que deseja excluir este tema?
+                    </p>
+
+                    <div className="flex gap-4">
+                        <button 
+                            className='flex-1 rounded-xl text-gray-600 bg-gray-100 
+                                       hover:bg-gray-200 py-3
+                                       transition-all duration-300 font-semibold'
+                            onClick={retornar}>
+                            ← Não, voltar
+                        </button>
+                        <button 
+                            className='flex-1 rounded-xl text-white bg-gradient-to-r from-red-500 to-red-600
+                                       hover:from-red-600 hover:to-red-700 py-3
+                                       flex items-center justify-center gap-2
+                                       transition-all duration-300 hover:scale-[1.02]
+                                       shadow-lg hover:shadow-xl font-semibold'
+                            onClick={deletarTema}>
+
+                            { isLoading ? 
+                                <ClipLoader 
+                                    color="#ffffff" 
+                                    size={24}
+                                /> : 
+                                <span>🗑️ Sim, deletar</span>
+                            }
+
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
