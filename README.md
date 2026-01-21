@@ -13,6 +13,14 @@ Projeto do bootcamp Generation Brasil - Blog Pessoal desenvolvido em React com T
 - Axios
 - Context API
 
+## 🎯 Funcionalidades
+
+- **Autenticação**: Sistema de login e cadastro de usuários
+- **Temas**: CRUD completo de temas (criar, listar, editar, deletar)
+- **Postagens**: CRUD completo de postagens com modal para criação rápida
+- **Perfil**: Visualização do perfil do usuário logado
+- **Home Dinâmica**: Lista de postagens e modal de criação na página inicial
+
 ## 📁 Estrutura do Projeto
 
 ```
@@ -23,6 +31,17 @@ src/
 │   │   └── Footer.tsx
 │   ├── navbar/
 │   │   └── Navbar.tsx
+│   ├── postagem/
+│   │   ├── cardpostagem/
+│   │   │   └── CardPostagem.tsx
+│   │   ├── deletarpostagem/
+│   │   │   └── DeletarPostagem.tsx
+│   │   ├── formpostagem/
+│   │   │   └── FormPostagem.tsx
+│   │   ├── listapostagens/
+│   │   │   └── ListaPostagens.tsx
+│   │   └── modalpostagem/
+│   │       └── ModalPostagem.tsx
 │   └── tema/
 │       ├── cardtema/
 │       │   └── CardTema.tsx
@@ -44,8 +63,10 @@ src/
 │   │   └── Cadastro.tsx
 │   ├── home/
 │   │   └── Home.tsx
-│   └── login/
-│       └── Login.tsx
+│   ├── login/
+│   │   └── Login.tsx
+│   └── perfil/
+│       └── Perfil.tsx
 ├── services/
 │   └── Service.ts
 ├── App.tsx
