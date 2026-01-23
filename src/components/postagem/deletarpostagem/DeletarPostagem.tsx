@@ -1,27 +1,26 @@
 import { useState, useContext, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
-import type Tema from "../../../models/Tema"
+import type Postagem from "../../../models/Postagem"
 import { buscar, deletar } from "../../../services/Service"
-import { ClipLoader } from "react-spinners";
-import { toast } from "react-toastify";
+import { ClipLoader } from "react-spinners"
+import { toast } from "react-toastify"
 
-function DeletarTema() {
+function DeletarPostagem() {
 
     const navigate = useNavigate()
 
-    const [tema, setTema] = useState<Tema>({} as Tema)
-
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    
-    const { usuario, handleLogout } = useContext(AuthContext)
-    const token = usuario.token
+    const [postagem, setPostagem] = useState<Postagem>({} as Postagem)
 
     const { id } = useParams<{ id: string }>()
 
+    const { usuario, handleLogout } = useContext(AuthContext)
+    const token = usuario.token
+
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/temas/${id}`, setTema, {
+            await buscar(`/postagens/${id}`, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
@@ -46,23 +45,23 @@ function DeletarTema() {
         }
     }, [id])
 
-    async function deletarTema() {
+    async function deletarPostagem() {
         setIsLoading(true)
 
         try {
-            await deletar(`/temas/${id}`, {
+            await deletar(`/postagens/${id}`, {
                 headers: {
                     'Authorization': token
                 }
             })
 
-            toast.success('Tema deletado com sucesso')
+            toast.success('Postagem deletada com sucesso')
 
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
             }else {
-                toast.error('Erro ao deletar o tema.')
+                toast.error('Erro ao deletar a postagem.')
             }
         }
 
@@ -71,9 +70,9 @@ function DeletarTema() {
     }
 
     function retornar() {
-        navigate("/temas")
+        navigate("/postagens")
     }
-    
+
     return (
         <div className="min-h-[60vh] bg-gradient-to-br from-slate-50 to-red-50 py-12">
             <div className='container max-w-lg mx-auto px-4'>
@@ -83,7 +82,7 @@ function DeletarTema() {
                     <div className="text-center mb-6">
                         <span className="text-6xl">⚠️</span>
                         <h1 className='text-3xl font-bold text-red-600 mt-4'>
-                            Deletar Tema
+                            Deletar Postagem
                         </h1>
                         <p className='text-gray-500 mt-2'>
                             Esta ação não pode ser desfeita
@@ -95,16 +94,17 @@ function DeletarTema() {
                             className='py-3 px-6 bg-gradient-to-r from-red-500 to-red-600 
                                        text-white font-bold text-xl'>
                             <span className="flex items-center gap-2">
-                                🏷️ Tema
+                                📝 Postagem
                             </span>
                         </header>
                         <div className='p-6 bg-gradient-to-br from-white to-red-50'>
-                            <p className='text-2xl text-gray-700 font-medium'>{tema.descricao}</p>
+                            <p className='text-2xl text-gray-700 font-medium'>{postagem.titulo}</p>
+                            <p className='text-gray-500 mt-2'>{postagem.texto}</p>
                         </div>
                     </div>
 
                     <p className='text-center text-gray-600 my-6 font-medium'>
-                        Você tem certeza que deseja excluir este tema?
+                        Você tem certeza que deseja excluir esta postagem?
                     </p>
 
                     <div className="flex gap-4">
@@ -121,7 +121,7 @@ function DeletarTema() {
                                        flex items-center justify-center gap-2
                                        transition-all duration-300 hover:scale-[1.02]
                                        shadow-lg hover:shadow-xl font-semibold'
-                            onClick={deletarTema}>
+                            onClick={deletarPostagem}>
 
                             { isLoading ? 
                                 <ClipLoader 
@@ -138,4 +138,4 @@ function DeletarTema() {
         </div>
     )
 }
-export default DeletarTema
+export default DeletarPostagem

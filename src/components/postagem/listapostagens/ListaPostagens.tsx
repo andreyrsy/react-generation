@@ -2,18 +2,18 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SyncLoader } from "react-spinners";
 import { AuthContext } from "../../../contexts/AuthContext";
-import type Tema from "../../../models/Tema";
+import type Postagem from "../../../models/Postagem";
 import { buscar } from "../../../services/Service";
-import CardTema from "../cardtema/CardTema";
+import CardPostagem from "../cardpostagem/CardPostagem";
 import { toast } from "react-toastify";
 
-function ListaTemas() {
+function ListaPostagens() {
 
     const navigate = useNavigate();
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    const [temas, setTemas] = useState<Tema[]>([])
+    const [postagens, setPostagens] = useState<Postagem[]>([])
 
     const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token
@@ -26,15 +26,15 @@ function ListaTemas() {
     }, [token])
 
     useEffect(() => {
-        buscarTemas()    
-    }, [temas.length])
+        buscarPostagens()    
+    }, [postagens.length])
 
-    async function buscarTemas() {
+    async function buscarPostagens() {
         try {
 
             setIsLoading(true)
 
-            await buscar('/temas', setTemas, {
+            await buscar('/postagens', setPostagens, {
                 headers: { Authorization: token }
             })
         } catch (error: any) {
@@ -56,7 +56,7 @@ function ListaTemas() {
                         size={20}
                     />
                     <p className="mt-4 text-purple-600 font-medium animate-pulse">
-                        Carregando temas...
+                        Carregando postagens...
                     </p>
                 </div>
             )}
@@ -67,19 +67,19 @@ function ListaTemas() {
                     <h1 className="text-3xl font-bold text-transparent bg-clip-text 
                                    bg-gradient-to-r from-indigo-600 to-purple-600 
                                    text-center mb-8">
-                        🏷️ Lista de Temas
+                        📝 Lista de Postagens
                     </h1>
 
-                    {(!isLoading && temas.length === 0) && (
+                    {(!isLoading && postagens.length === 0) && (
                         <div className="flex flex-col items-center justify-center my-12
                                         bg-white/80 backdrop-blur-sm rounded-2xl p-8
                                         shadow-lg border border-purple-100 max-w-md mx-auto">
                             <span className="text-6xl mb-4">📭</span>
                             <span className="text-2xl text-gray-600 text-center">
-                                Nenhum Tema encontrado!
+                                Nenhuma Postagem encontrada!
                             </span>
                             <p className="text-gray-400 mt-2 text-center">
-                                Crie seu primeiro tema para começar
+                                Crie sua primeira postagem para começar
                             </p>
                         </div>
                     )}
@@ -87,8 +87,8 @@ function ListaTemas() {
                     <div className="grid grid-cols-1 md:grid-cols-2 
                                     lg:grid-cols-3 gap-6">
                             {
-                                temas.map((tema) => (
-                                    <CardTema key={tema.id} tema={tema}/>
+                                postagens.map((postagem) => (
+                                    <CardPostagem key={postagem.id} postagem={postagem}/>
                                 ))
                             }
                     </div>
@@ -97,4 +97,4 @@ function ListaTemas() {
         </div>
     )
 }
-export default ListaTemas;
+export default ListaPostagens;
