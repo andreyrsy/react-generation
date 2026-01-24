@@ -109,3 +109,10 @@ npm run build
 - [React Router](https://reactrouter.com/)
 - [Axios](https://axios-http.com/)
 - [Context API](https://react.dev/reference/react/createContext)
+
+## 📦 Deploy
+
+Configuração realizada para deploy na Vercel:
+
+- Variável de ambiente `VITE_API_URL` configurada.
+- Script de build ajustado para compatibilidade.
